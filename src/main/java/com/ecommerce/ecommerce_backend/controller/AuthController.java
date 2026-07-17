@@ -5,6 +5,7 @@ import com.ecommerce.ecommerce_backend.dto.auth.LoginRequest;
 import com.ecommerce.ecommerce_backend.dto.auth.RefreshTokenRequest;
 import com.ecommerce.ecommerce_backend.dto.auth.RegisterRequest;
 import com.ecommerce.ecommerce_backend.service.AuthService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
+    @SecurityRequirements
     public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
         AuthResponse response = authService.register(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

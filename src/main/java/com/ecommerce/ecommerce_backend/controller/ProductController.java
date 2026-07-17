@@ -5,6 +5,7 @@ import com.ecommerce.ecommerce_backend.dto.product.ProductResponse;
 import com.ecommerce.ecommerce_backend.dto.product.ProductUpdateRequest;
 import com.ecommerce.ecommerce_backend.security.UserPrincipal;
 import com.ecommerce.ecommerce_backend.service.ProductService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Products", description = "Browse, search, and manage product listings")
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor

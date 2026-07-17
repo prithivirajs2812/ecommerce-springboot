@@ -15,5 +15,5 @@ public class UserProfileResponse {
     private String lastName;
     private String email;
     private String phone;
-    private boolean isSeller;
+    private boolean Seller;
 }
